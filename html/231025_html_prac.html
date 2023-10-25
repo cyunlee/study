@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--3번-->
+    <table border="1" cellspacing="0" cellpadding="5" width="250" height="150">
+        <tr>
+            <td colspan="2">1</td>
+            <td rowspan="2">2</td>
+        </tr>
+        <tr>
+            <td rowspan="2">3</td>
+            <td>center</td>
+        </tr>
+        <tr>
+            <td colspan="2">4</td>
+        </tr>
+    </table>
+    <!-- 첫 번째로 tr을 잡고, td를 잡는다-->
+    <!--합쳐지는 것은 위에서 내려오는 것이므로 td에 포함시키지 않아도 된다-->
+    <!--rowspan은 세로로 늘어나는 것이고 밑의 열과 병합하는 것임-->
+    <!--colspan을 줄 때는 칸의 길이를 생각하지 말고 칸의 수만 생각하면서 본다. 
+    1은3과 center을 차지하고 있으므로 colspan을 2로 준다. 4도 마찬가지..
+
+**칸의 개수에 맞춰서 colspan, rowspan을 주고 다 끝나고 나서 테이블의 크기를 제어한다.-->
+
+<!--4번-->
+    <table border="1" cellspacing="0" cellpadding="5">
+       <tr>
+        <th>구분</th>
+        <th>음료</th>
+        <th>가격</th>
+        <th>이미지</th>
+       </tr>
+       <tr>
+        <td rowspan="2">커피류</td>
+        <td>아메리카노</td>
+        <td>4200원</td>
+        <td><img src="" alt=""></td>
+       </tr>
+       <tr>
+        <td>돌체라떼</td>
+        <td>4800원</td>
+        <td><img src="" alt=""></td>
+       </tr>
+       <tr>
+        <td rowspan="2">쥬스류</td>
+        <td>아메리카노</td>
+        <td>5000원원</td>
+        <td><img src="" alt=""></td>
+       </tr>
+       <tr>
+        <td>돌체라떼</td>
+        <td><img src="" alt=""></td>
+       </tr>
+
+    </table>
+
+    <!--테이블을 만들 때 row를 먼저 보고 5줄이니까 tr을 5개를 만들어야겠다고 생각한다.-->
+</body>
+</html>
