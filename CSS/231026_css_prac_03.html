@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1:hover {
+        color: red;
+      }
+      a:active {
+        background-color: blue;
+      }
+      input:focus {
+        background-color: orange;
+      }
+
+      /*4번*/
+      .stripes div:nth-child(2n + 1) {
+        color: white;
+        background-color: navy;
+      }
+
+      .stripes div:nth-child(2n) {
+        background-color: yellow;
+      }
+
+      /*5번*/
+      .box::before {
+        content: "택시";
+      }
+
+      .box::after {
+        content: "여기요!";
+      }
+
+      /*6번*/
+      [disabled] {
+        background-color: red;
+      }
+
+      [placeholder="이름"] {
+        background-color: orange;
+      }
+
+      *:not([placeholder]) {
+        background-color: blue;
+      }
+
+      /*margin 실습*/
+      .orange {
+        width: auto;
+        height: 200px;
+        background-color: orange;
+      }
+
+      .orange div:nth-child(n) {
+        width: 200px;
+        height: 100px;
+        margin-right: 30px;
+        display: inline-block;
+      }
+
+      .orange div:nth-child(1) {
+        background-color: skyblue;
+      }
+
+      .orange div:nth-child(2) {
+        background-color: green;
+      }
+      .orange div:nth-child(3) {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>hover 실습</h1>
+    <a href="https://www.naver.com">Naver</a>
+    <input type="text" />
+
+    <hr />
+
+    <div class="stripes">
+      <div>navy</div>
+      <div>yellow</div>
+      <div>navy</div>
+      <div>yellow</div>
+      <div>navy</div>
+      <div>yellow</div>
+      <div>navy</div>
+      <div>yellow</div>
+      <div>navy</div>
+      <div>yellow</div>
+    </div>
+
+    <hr />
+
+    <div class="box">여기요!</div>
+
+    <hr />
+
+    <input type="text" placeholder="이름" />
+    <input type="password" value="pw" />
+    <input type="text" value="000-000-000" />
+    <input type="text" placeholder="핸드폰" />
+    <input type="text" placeholder="주민번호" disabled />
+
+    <hr />
+
+    <div class="orange">
+      <div>HTML</div>
+      <div>CSS</div>
+      <div>JavaScript</div>
+    </div>
+  </body>
+</html>

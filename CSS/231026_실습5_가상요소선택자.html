@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상요소선택자</title>
+    <style>
+        .box::before{
+            content: "택시🚕";
+            font-weight: bold;
+        }
+        .box::after{
+            content: "빨리";
+            font-weight: bold;
+            font-style:italic;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">여기요!</div>
+</body>
+</html>
