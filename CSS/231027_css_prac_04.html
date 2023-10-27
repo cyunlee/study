@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .one {
+        width: 10vw;
+        height: 10vw;
+        background-color: pink;
+        text-align: center;
+        line-height: 10vw;
+        margin: calc((100vh - 10vw) / 2) auto;
+        /*세로 중앙 정렬:
+        현재 화면 기준 전체 세로 길이(100vh)- 정사각형의 세로 길이(10vw) 나누기 2 해서 위, 아래에 마진 주기 */
+      }
+      .box-sizing {
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        border: 15px solid red;
+        background-color: orange;
+      }
+
+      .visibility:hover {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one">KDT</div>
+
+    <hr />
+    <!--box-sizing-->
+    <div class="box-sizing" style="box-sizing: content-box">content box</div>
+    <div class="box-sizing" style="box-sizing: border-box">border-box</div>
+
+    <!--visibility-->
+    <div
+      class="visibility"
+      style="width: 200px; height: 200px; background-color: blue"
+    ></div>
+
+    <!--overflow-->
+    <div class="square" style="overflow: scroll;">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste impedit,
+      reprehenderit perspiciatis molestiae nobis, eveniet itaque animi doloribus
+      vero quod nam quibusdam maiores atque esse! Quod voluptatem quisquam
+      voluptate libero. Minima praesentium similique accusamus ipsum quasi!
+      Consequatur nihil voluptatibus dolorum quis. Ipsum natus, molestiae
+      similique maxime neque laudantium impedit, omnis delectus nam hic tempore
+      quisquam et est quas ducimus eum.
+    </div>
+    <div class="square" style="overflow: auto;">overflow</div>
+  </body>
+</html>

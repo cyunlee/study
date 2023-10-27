@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      [type="text"] {
+        border-radius: 10px;
+        border-color: violet;
+        background-color: lightpink;
+      }
+      h3::before {
+        content: "📄";
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+    <h3 style="color: rgb(212, 0, 212); text-align:center;"  >설문조사</h3></div>
+    <form
+      style="
+        background-color: bisque;
+        width: fit-content;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        margin: auto;
+      "
+    >
+      <div class="square" style="margin:30px;">
+        이름<input type="text" style="margin: 5px" /> <br />
+        이메일<input
+          type="text"
+          placeholder="love@example.com"
+          style="margin: 5px"
+        />
+      </div>
+
+      <div class="square" style="margin:30px;">
+        <h4
+          style="
+            width: fit-content;
+            background-color: lightcoral;
+            color: white;
+            margin: auto;
+          "
+        >
+          나이
+        </h4>
+        <hr />
+        <input type="radio" name="age" value="10" />10대
+        <input type="radio" name="age" value="20" />20대
+        <input type="radio" name="age" value="30" />30대
+        <input type="radio" name="age" value="40" />40대
+        <input type="radio" name="age" value="50" />50대
+        <input type="radio" name="age" value="60" />60대 이상
+      </div>
+
+      <div class="square" style="margin:30px;">
+      <h4
+        style="
+          width: fit-content;
+          background-color: lightcoral;
+          color: white;
+          margin: auto;
+        "
+      >
+        원하는 강의(복수응답가능합니다.)
+      </h4>
+      <hr />
+      <input type="checkbox" name="lecture" value="html" />html
+      <input type="checkbox" name="lecture" value="javascript" />javascript
+      <input type="checkbox" name="lecture" value="css" />css
+      </div>
+      
+
+      <textarea
+        cols="50"
+        rows="10"
+        placeholder="하고 싶은 말을 써주세요"
+        style="
+          background-color: rgb(222, 221, 221);
+          border-radius: 10px;
+          border-style: dashed;
+          border-width: 4px;
+        "
+      ></textarea>
+      <br />
+      <input
+        type="button"
+        value="제출"
+        style="
+          background-color: palevioletred;
+          color: maroon;
+          border-color: white;
+          border-radius: 10px;
+          padding: 5px;
+          font-weight: bold;
+        "
+      />
+    </form>
+  </body>
+</html>
