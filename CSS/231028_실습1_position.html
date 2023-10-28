@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>relative/absolute/fixed</title>
+    <style>
+        .parent{
+            position: relative;
+            border: 4px solid black;
+            width: 500px;
+            height: 500px;
+        }
+        .item{
+            left:0px;
+            top:0px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .item1{
+            position: relative;
+            left: 50px;
+            top: 30px;
+            width: 100px;
+            height: 100px;
+            background-color: orange; 
+            text-align: center;
+            line-height: 100px;
+        }
+        .item2{
+            position: absolute;
+            right: 30px;
+            bottom: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            text-align: center;
+            line-height: 100px;
+        }
+        .item3{
+            position: fixed;
+            right: 100px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            text-align: center;
+            line-height: 100px;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="item"></div>
+      <div class="item1">item1</div>
+      <div class="item2">item2</div>
+      <div class="item3">item3</div>
+    </div>
+  </body>
+</html>

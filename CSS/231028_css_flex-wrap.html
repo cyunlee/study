@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-wrap</title>
+    <style>
+        .container{
+            width: 500px;
+            height: 500px;
+            background-color: snow;
+            border: 4px solid black;
+            display: flex;
+        }
+        .container>div{
+            width: 100px;
+            height: 100px;
+            background-color: lightpink;
+            border: 4px solid purple;
+        }
+        .container1{
+            flex-wrap: nowrap;
+        }
+        .container2{
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container container1">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="container container2">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

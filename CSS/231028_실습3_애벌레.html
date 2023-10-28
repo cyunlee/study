@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>z-index 애벌레 실습</title>
+    <style>
+        
+        .container{
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
+        .circle{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius:50%;
+        }
+        .face{
+            background-color: rgb(40, 149, 233);
+            left:0px;
+            top:0px;
+
+        }
+        .body1{
+            background-color:rgb(0, 106, 188);
+            left: 70px;
+            top: 40px;
+        }
+        .body2{
+            background-color:rgb(11, 55, 136);
+            left: 120px;
+            top: 80px;
+        }
+        .body3{
+            background-color:rgb(156, 186, 235);
+            left: 180px;
+            top: 80px;
+        }
+        .body4{
+            background-color:rgb(14, 126, 126);
+            left: 240px;
+            top: 80px;
+        }
+        .white{
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            left: 20px;
+            top: 20px;
+        }
+
+        .black{
+            position: absolute;
+            background-color: black;
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            left: 20px;
+            top: 25px;
+
+        }
+
+        
+    </style>
+  </head>
+  <body>
+
+    <img src="https://img.freepik.com/free-photo/piece-of-turf_1232-920.jpg" alt="잔디사진"/>
+    <div class="container">
+      <div class="circle face">
+        <div class="white"></div>
+        <div class="black"></div>
+        </div>
+      </div>
+      <div class="circle body1"></div>
+      <div class="circle body2"></div>
+      <div class="circle body3"></div>
+      <div class="circle body4"></div>
+    </div>
+  </body>
+</html>

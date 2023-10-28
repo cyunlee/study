@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>background</title>
+    <style>
+      div {
+        background-color: orange;
+        width: 800px;
+        height: 500px;
+      }
+      .background-img {
+        background-image: url("https://item.kakaocdn.net/do/d84248170c2c52303db27306a00fb861f604e7b0e6900f9ac53a43965300eb9a");
+        /* 1. background-repeat*/
+        background-repeat: repeat; /*default*/
+        background-repeat: repeat-x;
+        background-repeat: repeat-y;
+        background-repeat: no-repeat;
+
+        /* background-position */
+        /* background-position: left;
+        background-position: left top;
+        background-position: center;
+        background-position: 10px 100px; */
+        /* background-position: 100px; */
+
+        /* background-size */
+        background-size: auto; /*default*/
+        background-size: 100px;
+        background-size: 100px 50px;
+        background-size: cover;
+        background-size: contain;
+      }
+
+      /* background-attatchment */
+      .background-attach {
+        width: 300px;
+        height: 300px;
+        overflow: scroll;
+        background-image: url("https://item.kakaocdn.net/do/d84248170c2c52303db27306a00fb861f604e7b0e6900f9ac53a43965300eb9a");
+        background-attachment: local;
+        background-attachment: scroll;
+        background-attachment: fixed;
+      }
+    </style>
+  </head>
+  <body style="height: 1000px;">
+    <div class="background-img"></div>
+    <div class="background-attach">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium,
+      tempore animi rerum ipsa possimus molestiae voluptates dicta eveniet,
+      beatae quo, optio aperiam. Ut optio, labore veritatis dolor minus
+      explicabo natus! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Placeat assumenda illum minima hic quidem praesentium accusantium
+      veritatis libero sint perspiciatis adipisci sapiente a laborum recusandae
+      quibusdam deleniti nostrum, rem aliquid? Tempore qui veritatis minima
+      nihil officia exercitationem nisi fuga dolore illo fugit, nobis similique
+      enim repellat voluptate quidem ea blanditiis, cum accusamus possimus, eos
+      maiores deserunt voluptas eius? Sed, cumque! Non quibusdam deserunt
+      nostrum reprehenderit harum consequuntur nisi tenetur molestias ullam,
+      commodi fugiat voluptatibus neque ratione? Architecto sit voluptatem quos
+      consectetur voluptates unde rem minus consequatur amet, accusantium
+      corrupti adipisci!
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore molestiae, explicabo eaque ad quas consequatur vel impedit dignissimos odio officiis quia qui, voluptatem suscipit? Aliquam laborum sed natus laboriosam voluptas.
+      Atque maxime ipsum nam doloribus incidunt est consequuntur dolore reprehenderit cupiditate dolorum. Sapiente mollitia quod nulla reprehenderit consequatur quisquam dicta corrupti dolore illo quo, vel dignissimos esse ex vero pariatur?
+      Maiores nesciunt, nam quaerat cupiditate alias tenetur magnam dicta necessitatibus minima deserunt, repellendus possimus et quos quae tempora enim expedita veritatis officiis vero consequatur voluptatum labore nemo. Maxime, asperiores harum.
+      Eaque nisi voluptates eveniet laudantium enim porro ratione. Fugit itaque, in temporibus, corporis hic consequatur unde asperiores quas maxime et ex facilis commodi quidem porro. Pariatur, consequuntur? Voluptatibus, perferendis fugiat!
+    </div>
+  </body>
+</html>
