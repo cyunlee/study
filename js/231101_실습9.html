@@ -5,38 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>실습9</title>
     <script>
-      let sum = 0;
+    //   let sum = 0;
 
-      for (let n = 1; n < 100; n++) {
-        if (n % 2 == 0 || n % 3 == 0){
-            sum = sum + n;
-        }
-      }
-      console.log(sum);
+    //   for (let n = 1; n < 100; n++) {
+    //     if (n % 2 == 0 || n % 3 == 0) {
+    //       sum = sum + n;
+    //     }
+    //   }
+    //   console.log(sum);
 
       //9번 실습
-      let n = prompt('정수 n을 입력하세요. : ');
+      let n = prompt("정수 n을 입력하세요. : ");
       n = Number(n);
       let sum = 0;
 
-      for(let i=0; i<n; i++){
-        if(n<=0 && n>=100) alert('입력값이 잘못됐습니다.');
-        else{
-            if(i%2==0 || i%3==0) sum+=i;
+      for (let i = 0; i < n; i++) {
+        if (n <= 0 && n >= 100) {
+          alert("입력값이 잘못됐습니다.");
+          break;
+        } else {
+          if (i % 2 == 0 || i % 3 == 0) sum += i;
         }
       }
-      console.log('sum: ', sum);
+      console.log("sum: ", sum);
 
       let sum2 = 0;
       let i = 0;
-      while(i < n){
-        if(o % 2 == 0 || i % 3 == 0) sum2+=i;
+      while (i < n) {
+        if (o % 2 == 0 || i % 3 == 0) sum2 += i;
       }
-      
-
-
     </script>
-
   </head>
   <body></body>
 </html>
