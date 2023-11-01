@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>onclick&함수 만들기</title>
+    <script>
+      let a = prompt("첫 번째 숫자를 입력 해 주세요");
+      let b = prompt("두 번째 숫자를 입력 해 주세요");
+
+      function add() {
+        return Number(a) + Number(b);
+      }
+      function sub() {
+        return Number(a) - Number(b);
+      }
+      function divide() {
+        return Number(a) / Number(b);
+      }
+      function mul(a, b) {
+        return Number(a) * Number(b);
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="alert(add())">더하기</button>
+    <button onclick="alert(sub())">빼기</button>
+    <button onclick="alert(divide())">나누기</button>
+    <button onclick="alert(mul(a,b))">곱하기</button>
+  </body>
+</html>

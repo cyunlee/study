@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function prac</title>
+    <script>
+        // 1번
+        function multiply(num1, num2) {
+          return Number(num1) * Number(num2);
+        }
+        console.log(multiply(3, 7));
+        console.log(multiply("2", 2));
+
+        // 2번
+        function square(num1) {
+          console.log(Number(num1) * Number(num1));
+        }
+
+        //3번
+        //전역변수와 지역변수
+        //전역변수 > 지역변수 범위가 큰 것
+        //but 지역변수 좀 더 특별한 것
+      //   let num1 = prompt("첫번째 숫자");
+      //   num1 = Number(num1);
+      //   let num2 = prompt("두번째 숫자");
+      //   num2 = Number(num2);
+
+      //   function add(){
+      //     let result = num1 + num2;
+      //     alert(result);
+      //   }
+      //   function sub(){
+      //     let result = num1 - num2;
+      //     alert(result);
+      //   }
+      //   function mul(){
+      //     let result = num1 * num2;
+      //     alert(result);
+      //   }
+      //   function divide(){
+      //     let result = num1 / num2;
+      //     alert(result);
+      //   }
+
+      //if문 실습 4번
+      // let age = prompt('몇살이세요?');
+      // age = Number(age);
+      // if(age>=20) console.log('성인');
+      // else if(age>=17) console.log('고등학생');
+      // else if(age>=14) console.log('중학생');
+      // else if(age>=8) console.log('초등학생');
+      // else if(age>=0) console.log('유아');
+
+      //if문 실습 5번
+      let age = prompt('몇살이세요?');
+      let gender = prompt('성별은?');
+      age = Number(age);
+      if(age>=20) {
+          if(gender == '여') console.log('성인 여자');
+          else if(gender=='남') console.log('성인 남자');
+      else if(age>=17){
+          if(gender == '여') console.log('고등학생 여자');
+          else if(gender=='남') console.log('고등학생 남자');
+      }
+      else if(age>=14){
+          if(gender == '여') console.log('중학생 여자');
+          else if(gender=='남') console.log('중학생 남자');
+      }
+      else if(age>=8){
+          if(gender == '여') console.log('초등학생 여자');
+          else if(gender=='남') console.log('초등학생 남자');
+      }
+      else if(age>=0){
+          if(gender == '여') console.log('유아 여자');
+          else if(gender=='남') console.log('유아 남자');
+      }
+
+      //3항 연산자 실습
+      let now = new Date().getHours();
+      now < 12 ? console.log('현재시간은 오전') : console.log('현재시간은 오후');
+
+      //for문 실습
+      for(let i = 0; i <= 1000; i=i+13){
+            if(i % 2==1) console.log(i);
+      }
+
+      for(let i = 0; i<=1000; i++){
+        if(i % 13 == 0 && i % 2 ==1) 
+            console.log(i);
+      }
+
+      //for문 실습2
+      for(let i = 2; i < 10; i++){
+        console.log(i + "단")
+        for(let j=1; j<10; j++){
+            console.log(i + "x" + j + "=" i*j);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- <button onclick="add()">add</button>
+    <button onclick="sub()">sub</button>
+    <button onclick="mul()">mul</button>
+    <button onclick="divide()">divide</button> -->
+  </body>
+</html>

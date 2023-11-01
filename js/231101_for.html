@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for</title>
+    <script>
+      for (let i = 0; i < 10; i++) {
+        // 초기화: i를 0으로 셋팅
+        // 조건식 : i가 10보다 작을 때
+        // 증감식 : i를 1씩 키우겠다
+        console.log("i : ", i); // i : 0~9
+      }
+
+      for (let i = 1; i < 10; i = i + 2) {
+        console.log("i: ", i);
+      }
+
+      //while문
+      let i=0;
+      while(i < 5){
+        console.log('while i: ', i);
+        i++;
+      }
+
+      i=0;
+
+      while(true){
+        console.log('while true i : ' i)
+        i++;
+        if(i<10) {
+            break;
+        }
+      }
+
+      // break문
+      for(let i = 0; i < 100 ; i++){
+        if(i == 10){
+            console.log('멈춰!');
+            break;
+        }
+        console.log(i);
+      }
+
+      //continue문
+      for(let i = 0; i < 100 ; i++){
+        if(i == 10){
+            console.log('멈춰!');
+            continue;
+        }
+        // i == 10일 때는 continue 밑에 코드는 실행x (건너뛴다)
+        console.log(i);
+      }
+
+      for(let n = 1; n < 100; n++ ){
+        let sum1 = 0;
+        let sum2 = 0;
+        let sum3 = 0;
+        let sum = 0;
+        if(n % 2 ==0){
+            sum1 = sum1 + n;
+        }else if(n % 3 == 0){
+            sum2 = sum2 + n;
+        }else if(n % 6 == 0){
+            sum3 = sum3 + n;
+      }
+      sum = sum1 + sum2 - sum3;
+
+      console.log(sum);
+      
+    </script>
+  </head>
+  <body></body>
+</html>
