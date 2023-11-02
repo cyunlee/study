@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수박 함수</title>
+    <script>
+
+
+        function watermelon(n) {
+        
+            let str ="";
+            for(let i=1; i<=n; i++){
+            
+                if(i%2===0) 
+                    str = str+'박';
+                else 
+                    str = str+'수';
+            }
+            return str;
+        }
+        console.log(watermelon(3));
+
+        //1번째 풀이
+        function solution(n){
+            let answer = '';
+            // for(let i=1; i<=n; i++){
+                // i%2 == 1 ? answer += '수' : answer += '박';}
+             }
+
+        //2번째 풀이
+        const watermelon = '수박';
+        answer = watermelon.repeat(Number(n)).slice(0,n);
+        
+
+        //3번째 풀이
+        let repeatNum = Number(n)/2;
+        
+        answer=watermelon.repeat(repeatNum);
+        if(n % 2 == 1) answer += '수';
+        return answer;
+
+    </script>
+
+        }
+</head>
+<body>
+    
+</body>
+</html>

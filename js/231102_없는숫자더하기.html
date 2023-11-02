@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>없는 숫자 더하기</title>
+    <script>
+        function solution(numbers){
+            let answer = 0;
+            for(let i=0; i<=9; i++){
+                if(!numbers.includes(i)) answer = answer + i;
+            }
+            return answer;
+        }
+
+        console.log(solution([1, 2, 3]));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
