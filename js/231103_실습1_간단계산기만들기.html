@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>간단 계산기 만들기</title>
+  </head>
+  <body>
+    값1: <input type="text" id="value1" value="" /><br>
+    값2: <input type="text" id="value2" value="" /><br>
+    연산자: <input type="text" id="operator" value="" /><br>
+    결과: <input type="text" id="result" value="" /><br>
+    
+
+
+    <button onclick="">계산하기</button>
+    <button onclick="">초기화</button>
+
+    <script>
+
+        function calc(){
+      let v1 = document.getElementById('value1')
+      let v2 = document.getElementById('value2')
+      let v3 = document.getElementById('value3')
+      let v4 = 0;
+      
+      if(v3=='+'){
+        v4 = Number(v1)+Number(v2);
+      }else if(v3=='-'){
+        v4 = Number(v1)-Number(v2);
+      }else if(v3=='*'){
+        v4 = Number(v1)*Number(v2);
+      }else if(v3=='%'){
+        v4 = Number(v1)%Number(v2);
+      }
+      document.getElementById('value4').value=v4;
+        }
+    </script>
+  </body>
+</html>
