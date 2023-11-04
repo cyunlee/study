@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단계산기 만들기</title>
+</head>
+<body>
+    값1: <input type="text" id="value1" placeholder="값1" value=""> <br>
+    값2: <input type="text" id="value2" placeholder="값2" value=""> <br>
+    연산자: <input type="text" id="operator" placeholder="연산자" value=""> <br>
+    결과: <input type="text" id="result" placeholder="결과" value=""> <br>
+
+    <button onclick="calc()">계산하기</button>
+    <button onclick="reset()">초기화</button>
+
+    <script>
+
+        function calc() {
+        
+            let value1 = document.getElementById("value1").value;
+            let value2 = document.getElementById("value2").value;
+            let operator = document.getElementById("operator").value;
+
+        switch(operator){
+            case '+' : 
+                document.getElementById("result").value=Number(value1) + Number(value2);
+                break;
+            case '-' : 
+                document.getElementById("result").  value=Number(value1) - Number(value2);
+                break;
+            case '*' : 
+                document.getElementById("result").value=Number(value1) * Number(value2);
+                break;
+            case '/' : 
+                document.getElementById("result").value=Number(value1) / Number(value2);
+                break;
+            case '%' : 
+                document.getElementById("result").value=Number(value1) % Number(value2);
+                break;
+            default :
+                document.getElementById("result").value="연산자가 잘못되었습니다.";
+        }
+    }
+
+    function reset(){
+        document.getElementById("value1").value="";
+        document.getElementById("value2").value="";
+        document.getElementById("operator").value="";
+        document.getElementById("result").value="";
+    }
+
+
+    </script>
+</body>
+</html>
