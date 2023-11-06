@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        function apple(){
+            $('img').attr('src', 'https://media.istockphoto.com/id/834816218/ko/%EC%82%AC%EC%A7%84/%EB%B9%A8%EA%B0%84-%EC%82%AC%EA%B3%BC-%EA%B3%BC%EC%9D%BC-%EC%A0%88%EB%B0%98%EC%99%80-%EB%85%B9%EC%83%89-%EC%9E%8E%EC%97%90-%EA%B3%A0%EB%A6%BD-%EB%90%9C-%ED%99%94%EC%9D%B4%ED%8A%B8.jpg?s=612x612&w=0&k=20&c=6_NhQIRTEb0k4EPx9r4oZlzzs622F_KrdBHnaRbxHdE=');
+        }
+
+        function banana(){
+            $('img').attr('src', 'https://ojsfile.ohmynews.com/CT_T_IMG/2021/0223/IE002764698_LT.jpg');
+        }
+
+        function grape(){
+            $('img').attr('src', 'https://t1.daumcdn.net/news/202009/04/KorMedi/20200904124409802bujj.jpg');
+        }
+
+        function peach(){
+            $('img').attr('src', 'https://img.hankyung.com/photo/202207/BD.30664440.1.jpg');
+        }
+    </script>
+    <style>
+        button {
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <img style="width: 400px; height: 400px;"></img>
+    <br>
+    <div style="margin-left: 80px;">
+        <button id="apple" onclick="apple()">apple</button>
+        <button id="banana" onclick="banana()">banana</button>
+        <button id="grape" onclick="grape()">grape</button>
+        <button id="peach" onclick="peach()">peach</button>
+    </div>
+  </body>
+</html>
+
+<!-- 
+
+    사과 : https://media.istockphoto.com/id/834816218/ko/%EC%82%AC%EC%A7%84/%EB%B9%A8%EA%B0%84-%EC%82%AC%EA%B3%BC-%EA%B3%BC%EC%9D%BC-%EC%A0%88%EB%B0%98%EC%99%80-%EB%85%B9%EC%83%89-%EC%9E%8E%EC%97%90-%EA%B3%A0%EB%A6%BD-%EB%90%9C-%ED%99%94%EC%9D%B4%ED%8A%B8.jpg?s=612x612&w=0&k=20&c=6_NhQIRTEb0k4EPx9r4oZlzzs622F_KrdBHnaRbxHdE=
+
+    바나나 : https://media.istockphoto.com/id/173242750/ko/%EC%82%AC%EC%A7%84/%EB%B0%94%EB%82%98%EB%82%98-%EB%B2%88%EC%B9%98.jpg?s=612x612&w=0&k=20&c=3cRaZoK04r_mV4h51onlNeIMcjMJhHiMaIICWz9F5w8=
+
+    포도 : https://t1.daumcdn.net/news/202009/04/KorMedi/20200904124409802bujj.jpg
+
+    복숭아 : https://img.hankyung.com/photo/202207/BD.30664440.1.jpg
+
+
+
+
+-->

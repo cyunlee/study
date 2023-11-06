@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script
+    type="text/javascript"
+    src="https://code.jquery.com/jquery-3.5.0.min.js"
+  ></script>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 이벤트</title>
+    
+</head>
+<body>
+    <div class="container">
+        <input type="text">
+        <button>버튼</button>
+    </div>
+    <script>
+        console.log($(document));
+        //ready : 돔 트리 생성 완료된 후 실행
+        $(document).ready(function() {
+            $('.container').append('<h2>안녕 ready</h2>');
+        })
+
+        $(function() {
+            //ready와 동일
+            $('.container').append('<h2>안녕 ready2</h2>');
+        })
+
+        //load
+        $(window).on('load', function(){
+            $('.container').append('<h2>안녕 load</h2>');
+        })
+        // $('button').click(function() {
+        //     alert('클릭!');
+        // })
+        $('button').on('click', function(){
+            alert('클릭! on');
+        })
+
+        $('button').mouseover(function() {
+            alert('mouseover');
+        })
+
+        $('input').keydown(function(e) {
+            console.log('e.target : ', e.target);
+            // console.log('keydown');
+            console.log(e.key);
+            console.log('this : ', this);
+            if(e.key == 'enter') alert('enter 입력');
+        })
+
+
+    </script>
+</body>
+</html>
