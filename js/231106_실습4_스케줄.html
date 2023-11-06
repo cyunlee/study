@@ -108,19 +108,15 @@
     </table>
 
     <script>
+      $("td>p").on("click", function () {
+        $("#date").attr("value", $(this).text());
+        let date = $(this.text());
+      });
 
-        $('td>p').on('click', function(){
-            $('#date').attr('value', $(this).text());
-            let date = $(this.text());
-        });
-
-        function writeSchedule(){
-            let content = $('#content').val();
-            console.log(content);
-            
-        }
-
-        
+      function writeSchedule() {
+        let content = $("#content").val();
+        console.log(content);
+      }
     </script>
   </body>
 </html>
