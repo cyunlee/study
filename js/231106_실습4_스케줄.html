@@ -108,14 +108,23 @@
     </table>
 
     <script>
-      $("td>p").on("click", function () {
-        $("#date").attr("value", $(this).text());
-        let date = $(this.text());
+
+        let parent=''; //parent 변수는 여러 함수 안에서 사용되어야 하기 때문에 전역변수로 선언한다.
+        //this를 기억하기 위한 전역변수를 만들어줘야 한다.
+
+      $('td>p').on('click', function() {
+        //날짜, 내용 input 선택
+        //$('#date').val($(this).text());
+        //this는 범위 스코프 안에서만 사용할 수 있음 
+        $('#date').attr('value', $(this).text()); // #date의 value에 클릭한 숫자를 텍스트로 변경해서 넣음
+        //날짜만 가져오려면 this의 text 값을 가져와야 함 
+        parent = $(this).parent();
       });
 
       function writeSchedule() {
-        let content = $("#content").val();
+        let content = $('#content').val();
         console.log(content);
+        $(parent).append(`<p>${content}</p>`);
       }
     </script>
   </body>
