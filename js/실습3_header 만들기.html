@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>header 만들기</title>
+    <script
+      src="https://kit.fontawesome.com/837ff3adc1.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        /* normalize */
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        /* normalize */
+      }
+
+      /* header 스타일링 */
+      header {
+        width: 100%;
+        height: 100px;
+        z-index: 100;
+        /* 가장 상위로 올라갈 수 있도록 */
+      }
+      header .inner {
+        background-color: lightblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* 상하좌우 정중앙으로 */
+        /* display-flex는 중앙정렬을 위해 */
+        height: 100%;
+      }
+
+      header .inner .logo {
+        position: relative;
+        right: 200px;
+        /* 형제 요소로부터 200px */
+        color: white;
+        font-size: 2rem;
+      }
+
+      header .inner .menu {
+        display: flex;
+        /* 원래 세로로 정렬되어 있던걸 가로 정렬 */
+      }
+
+      header .inner .menu li {
+        margin: 0 10px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: 768px) {
+
+        header {
+            height: 60px;
+        }
+        
+        header .inner {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+        }
+
+        header .inner .logo {
+          position: absolute;
+          right: 315px;
+        }
+
+        header .inner .menu {
+          position: absolute;
+          top: 60px;
+          display: flex;
+          flex-direction: column;
+        }
+        header .inner .menu li {
+          font-weight: 400;
+          margin: 10px;
+        }
+
+        header .inner .menu{
+            background-color: aliceblue;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <div class="logo">
+          <i class="fa-brands fa-soundcloud"></i>
+        </div>
+
+        <ul class="menu">
+          <li>메뉴1</li>
+          <li>메뉴2</li>
+          <li>메뉴3</li>
+          <li>메뉴4</li>
+        </ul>
+      </div>
+    </header>
+  </body>
+</html>

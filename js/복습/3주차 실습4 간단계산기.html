@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>간단 계산기 만들기</title>
+  </head>
+  <body>
+    값1: <input type="text" id="value1" value="" /><br />
+    값2: <input type="text" id="value2" value="" /><br />
+    연산자: <input type="text" id="operation" value="" /><br />
+    결과: <input type="text" id="result" /><br /><br />
+
+    <button onclick="calc()">계산하기</button>
+    <button onclick="reset()">초기화</button>
+
+    <!-- <script>
+    //복잡하지 않게 맨 처음에 값을 선택하고 변수에 다 넣고 시작하기
+    let val1 = document.getElementById('value1');
+    let val2 = document.getElementById('value2');
+    let operation = document.getElementById('operation');
+    let result = document.getElementById('result');
+
+    function calc(){
+    if(operation.value=='+') result.value = Number(val1.value)+Number(val2.value);
+    else if(operation.value=='-') result.value = Number(val1.value)-Number(val2.value);
+    else if(operation.value=='/') result.value = Number(val1.value)/Number(val2.value);
+    else if(operation.value=='%') result.value = Number(val1.value)%Number(val2.value);
+    else if(operation.value=='*') result.value = Number(val1.value)*Number(val2.value);
+    }
+
+    function reset(){
+        val1.value='';
+        val2.value='';
+        operation.value='';
+        result.value='';
+    }
+
+
+    </script> -->
+
+    <!-- 좀 더 간단하게 하는 방법은 없을까? -->
+
+    <!-- 우선, 복잡하니까 선택하고 변수에 넣자 -->
+
+    <script>
+      let value1 = document.getElementById("value1");
+      let value2 = document.getElementById("value2");
+      let operation = document.getElementById("operation");
+      let result = document.getElementById("result");
+
+      console.log("a", operation);
+      //순서 정리
+      // 1. calc()함수와 reset()함수를 만든다
+
+      function calc() {
+        switch (operation.value) {
+          case "+":
+            result.value = Number(value1.value) + Number(value2.value);
+            break;
+          case "-":
+            result.value = Number(value1.value) - Number(value2.value);
+            break;
+          case "*":
+            result.value = Number(value1.value) * Number(value2.value);
+            break;
+          case "/":
+            result.value = Number(value1.value) / Number(value2.value);
+            break;
+          case "%":
+            result.value = Number(value1.value) % Number(value2.value);
+            break;
+        }
+      }
+
+      function reset() {
+        value1.value = "";
+        value2.value = "";
+        operation.value = "";
+        result.value = "";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메소드</title>
+  </head>
+  <body>
+    <script>
+      //실습1
+
+    //1부터 100까지의 배열을 for문을 사용해서 만들기
+    let arr = [];
+    let sum1=0;
+    let sum2=0;
+    let sum3=0;
+    //for문을 이용해서 배열 만들기
+    for(let i=1; i<=100; i++){
+        arr.push(i);
+    }
+    console.log(arr); //ok
+
+    //for문
+    for(let i=0; i<arr.length; i++){
+        sum1 = sum1 + arr[i];
+    }
+    
+    console.log('for문 : ' + sum1);
+
+    //for of문
+    for(let num of arr){
+        sum2 = sum2 + num;
+    }
+
+    console.log('for of문 : ' + sum2);
+
+    //for each문
+    arr.forEach((num) => {
+        sum3 = sum3 + num;
+    });
+
+    console.log('for each문 : ' + sum3);
+
+    </script>
+  </body>
+</html>
