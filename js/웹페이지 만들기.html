@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 아이콘 불러오기 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
     <!-- CSS 불러오기 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -19,8 +22,101 @@
       crossorigin="anonymous"
     ></script>
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 350px);
+            box-sizing: border-box;
+        }
+        .grid-item{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .item1{
+            border: 1px solid lightgrey;
+            grid-row: span 2;
+            border-radius: 30px;
+        }
+        .item2{
+            border: 1px solid lightgrey;
+            border-radius: 30px;
+        }
+        .item3{
+            border: 1px solid lightgrey;border-radius: 30px;
+        }
+        .item4{
+            border: 1px solid lightgrey;
+            border-radius: 30px;
+        }
+        .item5{
+            border: 1px solid lightgrey;
+            border-radius: 30px;
+        }
+        .item6{
+            border: 1px solid lightgrey;
+            border-radius: 30px;
+        }
+        .item7{
+            border: 1px solid lightgrey;
+            border-radius: 30px;
+        }
+        .album{
+            width: 180px;
+            height: 180px;
+            margin-top: 30px;
+            border: 3px solid gray;
+            border-radius: 20px;
+        }
+    </style>
+  </head>
+  <body class="bg-light" style="height: 1000px">
+    <!--네비게이션 바-->
+    <nav class="navbar navbar-light bg-dark sticky-top mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" style="color: white; font-weight: bold;">MUSIK</a>
+        <form class="d-flex">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-secondary" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <div class="container ms-2">
+        <div class="grid-item item1 m-2">
+        </div>
+        <div class="grid-item item2 m-2">
+            <img class="album album1" src="https://i.pinimg.com/originals/52/56/58/5256583c0e5791b7266176e339653b60.jpg">
+            <div></div>
+        </div>
+        <div class="grid-item item3 m-2">
+            <img class="album album2" src="https://upload.wikimedia.org/wikipedia/en/1/10/NewJeans_OMG_cover.jpg">
+            <div>OMG</div>
+        </div>
+        <div class="grid-item item4 m-2">
+            <img class="album album3" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/%22Seven%22_by_Jungkook_%28album_cover%29.jpg">
+            <div>SEVEN</div>
+        </div>
+        <div class="grid-item item5 m-2">
+            <img class="album album4" src="https://i.cbc.ca/1.4574015.1614648535!/fileImage/httpImage/daniel-caesar.jpg">
+            <div></div>
+        </div>
+        <div class="grid-item item6 m-2">
+            <img class="album album5" src="https://assets.teenvogue.com/photos/55d5ebc8ca15223514647be6/4:3/w_1423,h_1067,c_limit/Charlie%20Puth%20-%20Nine%20Track%20Mind%20-%20Album%20Artwork.jpg">
+            <div></div>
+        </div>
+        <div class="grid-item item7 m-2">
+            <img class="album album6" src="https://pyxis.nymag.com/v1/imgs/5a1/58c/580de90bf142c7660dcbaf8faa789a61b1-20-taylor-swift-1989.2x.w710.png">
+            <div></div>
+        </div>
+    </div>
+
+
+  </body>
 </html>
