@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습3</title>
+  </head>
+  <body>
+    <h1>콜백지옥 예시</h1>
+
+    <script>
+      function colorChange(color) {
+        return new Promise(function (resolve, reject) {
+          setTimeout(function () {
+            document.body.style.backgroundColor = color;
+            resolve();
+          }, 1000);
+        });
+      }
+
+    //   //1) then()을이용
+    //   changeBgColor('red')
+    //   .then(function() {
+    //     return changeBgCOlor('orange');
+    //   }).then(function(){
+    //     return changeBgColor('yellow');
+    //   }).then(function(){
+    //     return changeBgColor('green');
+    //   }).then(function(){
+    //     return changeBgColor('blue');
+    //   })
+
+      async function exec() {
+        await colorChange("red");
+        await colorChange("orange");
+        await colorChange("yellow");
+        await colorChange("green");
+        await colorChange("blue");
+      }
+
+      exec();
+    </script>
+  </body>
+</html>
