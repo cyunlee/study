@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>post로 정보 받기</title>
+  </head>
+  <body>
+    <form action="/signUp2" method="post">
+      <label for="name">이름</label>
+      <input type="text" id="name" value="name" name="name" required/>
+      <fieldset>
+        <legend>성별</legend>
+        <input type="radio" value="남자" name="gender" required/>남자
+        <input type="radio" value="여자" name="gender" required/>여자
+      </fieldset>
+      <fieldset>
+        <legend>생년월일</legend>
+        <select name="year" id="birth-year">
+        </select>
+        <select name="month" id="birth-month">
+        </select>
+        <select name="day" id="birth-day">
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>관심사</legend>
+        <input type="checkbox" value="여행" id="travel" name="interest"/>여행
+        <input type="checkbox" value="패션" id="fashion" name="interest" />패션
+        <input type="checkbox" value="음식" id="music" name="interest"/>음악
+      </fieldset>
+
+      <fieldset>
+        <legend>선택</legend>
+        <label for="color"></label>
+        <input type="color" id="color" name="color">
+        <label for="number"></label>
+        <input type="select" id="number" name="number">
+      </fieldset>
+
+      <button>회원가입</button>
+    </form>
+
+    <script>
+      // '출생 연도' 셀렉트 박스 option 목록 동적 생성
+      const birthYearEl = document.querySelector("#birth-year");
+      // option 목록 생성 여부 확인
+      isYearOptionExisted = false;
+      birthYearEl.addEventListener("focus", function () {
+        // year 목록 생성되지 않았을 때 (최초 클릭 시)
+        if (!isYearOptionExisted) {
+          isYearOptionExisted = true;
+          for (var i = 1940; i <= 2022; i++) {
+            // option element 생성
+            const YearOption = document.createElement("option");
+            YearOption.setAttribute("value", i);
+            YearOption.innerText = i;
+            // birthYearEl의 자식 요소로 추가
+            this.appendChild(YearOption);
+          }
+        }
+      });
+      // Month, Day도 동일한 방식으로 구현
+       // '출생 연도' 셀렉트 박스 option 목록 동적 생성
+       const birthMonthEl = document.querySelector("#birth-month");
+      // option 목록 생성 여부 확인
+      isMonthOptionExisted = false;
+      birthMonthEl.addEventListener("focus", function () {
+        // year 목록 생성되지 않았을 때 (최초 클릭 시)
+        if (!isMonthOptionExisted) {
+          isMonthOptionExisted = true;
+          for (var i = 1; i <= 12; i++) {
+            // option element 생성
+            const MonthOption = document.createElement("option");
+            MonthOption.setAttribute("value", i);
+            MonthOption.innerText = i;
+            // birthYearEl의 자식 요소로 추가
+            this.appendChild(MonthOption);
+          }
+        }
+      });
+
+      const birthDayEl = document.querySelector("#birth-day");
+      // option 목록 생성 여부 확인
+      isDayOptionExisted = false;
+      birthDayEl.addEventListener("focus", function () {
+        // year 목록 생성되지 않았을 때 (최초 클릭 시)
+        if (!isDayOptionExisted) {
+          isDayOptionExisted = true;
+          for (var i = 1; i <= 31; i++) {
+            // option element 생성
+            const DayOption = document.createElement("option");
+            DayOption.setAttribute("value", i);
+            DayOption.innerText = i;
+            // birthYearEl의 자식 요소로 추가
+            this.appendChild(DayOption);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
