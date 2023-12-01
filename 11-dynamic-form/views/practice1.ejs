@@ -1,81 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- jQuery cdn -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axios Get 실습</title>
 
-  <!-- axios cdn -->
+  <!-- axios -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <style>
-    div.result {
-      font-size: 24px;
-      font-weight: 700;
-    }
-  </style>
 </head>
+
 <body>
-    <h1>axios get 메소드로 받기</h1>
-    <form name="register">
-        <label for="name">이름</label>
-        <input type="text" id="name" name="name"/>
-        <fieldset>
-          <legend>성별</legend>
-          <input type="radio" value="남자" name="gender"/>남자
-          <input type="radio" value="여자" name="gender"/>여자
-        </fieldset>
-        <fieldset>
-          <legend>생년월일</legend>
-          <select name="year" id="birth-year">
-          </select>
-          <select name="month" id="birth-month">
-          </select>
-          <select name="day" id="birth-day">
-          </select>
-        </fieldset>
-        <fieldset>
-          <legend>관심사</legend>
-          <input type="checkbox" value="여행" id="travel" name="interest"/>여행
-          <input type="checkbox" value="패션" id="fashion" name="interest" />패션
-          <input type="checkbox" value="음식" id="music" name="interest"/>음악
-        </fieldset>
-  
-        <button type="button" onclick="axiosGet()">회원가입</button>
+  <h2>실습1. axios get 회원가입</h2>
+  <form name="register">
+    <label for="username">이름</label>
+    <input type="text" name="username" id="username" required />
+    <br />
 
-        <!-- 동적 폼 전송 결과를 보여줄 곳 -->
-        <div class="resultBox"></div>
-      </form>
+    <fieldset>
+      <legend>성별</legend>
+      <input type="radio" name="gender" id="male" value="male" checked />
+      <label for="male">남자</label>
+      <input type="radio" name="gender" id="female" value="female" />
+      <label for="female">여자</label>
+    </fieldset>
+    <br />
 
-      <script>
+    <fieldset>
+      <legend>생년월일</legend>
+      <select name="birthYear" id="year">
+        <% for (let i = 0; i < 50; i++) { %>
+        <option value="<%= 2010 - i %>"><%= 2010 - i %></option>
+        <% } %>
+      </select>
+      <label for="year">년</label>
+      <select name="birthMonth" id="month">
+        <% for (let i = 1; i < 13; i++) { %>
+        <option value="<%= i %>"><%= i %></option>
+        <% } %>
+      </select>
+      <label for="month">월</label>
+      <select name="birthDay" id="day">
+        <% for (let i = 1; i < 31; i++) { %>
+        <option value="<%= i %>"><%= i %></option>
+        <% } %>
+      </select>
+      <label for="day">일</label>
+    </fieldset>
+    <br />
 
-        async function axiosGet() {
-        //result 박스 선택
-        const form = document.forms["register"];
+    <fieldset>
+      <legend>관심사</legend>
+      <input type="checkbox" name="hobby" id="travle" value="travle" checked />
+      <label for="travle">여행</label>
+      <input type="checkbox" name="hobby" id="fashion" value="fashion" />
+      <label for="fashion">패션</label>
+      <input type="checkbox" name="hobby" id="food" value="food" />
+      <label for="food">음식</label>
+    </fieldset>
+    <!-- 참고! there is no HTML5 validation for a group of checkboxes. You will have to do the validation using Javascript. -->
+    <br />
 
-        //폼 요소 value 값
-        const data = {
-          name: form.name.value,
-          gender: form.gender.value
-          month: form.
-        }
+    <button type="button" onclick="clickRegister();">회원가입</button>
+  </form>
+  <div class="register-result"></div>
 
-        axios({
-          method: 'get',
-          url: '/axios',
-          params: data // 서버로 보낼 데이터
-        }).then((response) => {
-          console.log(response);
-          console.log(response.data);
 
-          const data = response.data
+  <script>
+    const registerResult = document.querySelector('.register-result');
 
-          resultBox.textContent = `Get /axios 요청 완료! ${data.name} 님의 성별은 ${data.gender}입니다!`;
-        })
+    function clickRegister() {
+      const form = document.forms['register'];
+      console.log(form.hobby.value) // value 라는 속성에 접근 X => NodeList 형태로 반환(form.hobby) => name = hobby 라는 태그가 많아서
+      console.log(form.username.value) // value 라는 속성에 접근 O => 하나의 요소로 반환 (form.username)
+
+      // hobby checkbox 정보 출력하고 싶은 경우, 다음과 같이 새로운 배열로 정의
+      // case1. forEach 반복문 사용
+      // const hobbies = [];
+      // form.hobby.forEach((elem) => {
+      //   if (elem.checked) { // 체크가 되어있으면 true 반환
+      //     hobbies.push(elem.value);
+      //   }
+      // })
+
+      // case 2. filter, map 반복문 사용
+      // Array.from(arrayLike) : 유사 배열 객체를 배열로 변환해준다
+      const hobbies = Array.from(form.hobby)
+        .filter((elem) => elem.checked === true)
+        .map((elem) => elem.value);
+
+      console.log('hobbies >', hobbies);
+
+      const data = {
+        username: form.username.value,
+        gender: form.gender.value,
+        birthYear: form.birthYear.value,
+        birthMonth: form.birthMonth.value,
+        birthDay: form.birthDay.value,
+        hobby: hobbies,
       }
 
+      console.log('data >', data);
 
-      </script>
+      axios({
+        method: 'get',
+        url: '/axios1',
+        params: data
+      }).then((response) => {
+        console.log(response.data)
+        const {
+          username,
+          gender,
+          birthYear,
+          birthMonth,
+          birthDay,
+          hobby
+        } = response.data;
+        registerResult.textContent = `${username}님 환영합니다!
+        가입 완료! 생년월일은 ${birthYear}년 ${birthMonth}월 ${birthDay}일!
+        취미는 ${hobby}`;
+      })
+    }
+  </script>
 </body>
+
 </html>

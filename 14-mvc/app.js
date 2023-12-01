@@ -25,6 +25,12 @@ const userRouter = require('./routes/user');
 app.use('/user', userRouter); //localhost:PORT/user 경로를 기본으로 ./routes/user.js 파일에 선언한 대로 동작
 
 
+
+//----- 실습 -----
+const practiceRouter = require('./routes/practice');
+app.use('/practice', practiceRouter);
+
+
 // [404 error]
 // 맨 마지막에 라우트로 선언: 위에다 하게 되면 나머지 코드 무시되기 때문에
 app.get('*', (req, res) => {
