@@ -9,4 +9,10 @@ const controller = require('../controller/Cuser');
 // GET /user
 router.get('/', controller.user);
 
+// POST /user/user/test
+// router.post('/user/test')
+
+// /user/login
+// /user/siginin
+
 module.exports = router;

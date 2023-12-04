@@ -1,10 +1,13 @@
+// 라우터 연결
 const express = require('express');
 const router = express.Router();
+// controller 파일
 const controller = require('../controller/Cpractice');
 
-//Get /practice2
+// GET /practice
 router.get('/', controller.main);
-//controller에 main이라고 만들어준다.
 
+// POST /practice/login
+router.post('/login', controller.login);
 
 module.exports = router;
