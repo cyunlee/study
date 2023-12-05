@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>회원가입</title>
+
+  <!-- axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
+
 <body>
-    <h1>회원가입</h1>
-    <form name="form_register">
-        <label for="userid">ID</label>
-        <input type="text" id="userid" name="userid"><br>
-        <label for="password">Password</label>
-        <input type="text" id="password" name="pw"><br>
-        <label for="nickname">Name</label>
-        <input type="text" id="nickname" name="name"><br>
+  <h1>회원가입</h1>
+  <form name="form_register">
+    <label for="userid">ID</label>
+    <input id="userid" type="text" name="userid" required /><br />
+    <label for="password">Password</label>
+    <input id="password" type="password" name="pw" required /><br />
+    <label for="nickname">Name </label>
+    <input id="nickname" type="text" name="name" required /><br />
+    <button type="button" onclick="register();">Register</button>
+  </form>
 
-        <button type="button" onclick="register();">Register</button>
-    </form><br>
-    <a href="/user/signin">Login</a>
+  <a href="/user/signin">Login</a>
 
-    <script>
-        function register() {
-            const form = document.forms['form_register'];
-            //폼 가져오기
+  <script>
+    function register() {
+      const form = document.forms['form_register'];
 
-            if(!form.checkValidity()){
-                form.reportValidity();
-                return; //뒤에꺼 실행 안 되게 함수 끝내기 
-            }
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
 
-            axios({
-                method: 'POST',
-                //회원가입이니까 정보를 담아서 보냄 -> post
-                url:  '/user/signup', //user가 기본경로이기 때문에 프론트에서 처리할 때도 user를 붙여줘야 한다
-                data: {
-                    userid: form.userid.value,
-                    pw: form.pw.value,
-                    name: form.name.value,
-                }
-            }).then((res)=>{
-                console.log(res.data);
-
-                // alert 성공 메시지 
-                alert('회원가입 성공!');
-                // 가입 성공시 로그인 페이지로 이동
-                document.location.href = '/user/signin';
-
-            }) //요청에 응답받고 나서 console.log를 띄움
-            
-
+      axios({
+        method: 'POST',
+        url: '/user/signup',
+        data: {
+          userid: form.userid.value,
+          pw: form.pw.value,
+          name: form.name.value
         }
-    </script>
+      }).then((res) => {
+        console.log(res.data);
+
+        // alert 성공 메시지
+        alert('회원가입 성공!');
+        // 가입 성공시 로그인 페이지로 이동
+        document.location.href = '/user/signin';
+      })
+    }
+  </script>
 </body>
-</html>

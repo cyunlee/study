@@ -26,6 +26,8 @@ const Visitor = (Sequelize, DataTypes) => {
             }
         }, //param2 : 컬럼 정의 
         {
+            charset: "utf8",
+            collate: "utf8_general_ci",
             tableName: 'visitor', //실제 DB 테이블 이름 명시
             freezeTableName: true, //첫 번째 인자로 넘겨준 모델 이름을 그대로 테이블 이름으로 고정
             //시퀄라이즈는 기본적으로 테이블 이름을 모델 + s로 가져가요
