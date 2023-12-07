@@ -27,7 +27,7 @@ Player.hasOne(Profile, {
 });
 Profile.belongsTo(Player, {
     foreignKey: 'player_id',
-    targetKey: 'player_id'
+    targetKey: 'player_id' // 기본키 사용시 생략 가능
 });
 
 
