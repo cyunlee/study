@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>practice1</title>
+     <!-- axios cdn -->
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </head>
 <body>
 
     <h1>GET 폼 실습</h1>
 
-    <form action="/result1" method="get">
+    <form name="register">
         <label for="userName">이름</label>
-        <input type="text" name="userName" id="userName">
+        <input type="text" name="userName" id="name">
 
         <br>
 
@@ -19,7 +22,7 @@
             <legend>성별</legend>
             <input type="radio" name="gender" id="male" value="male">
             <label for="male">남자</label>
-            <input type="radio" name="gender" id="female" value="male">
+            <input type="radio" name="gender" id="female" value="female">
             <label for="female">여자</label>
         </fieldset>
 
@@ -59,14 +62,56 @@
             <input type="checkbox" name="hobby" id="fashion" value="fashion">
             <label for="fashion">패션</label>
 
-            <input type="checkbox" name="hobby" id="food" value=food>
+            <input type="checkbox" name="hobby" id="food" value="food">
             <label for="food">음식</label>
         </fieldset>
 
         <br>
 
-        <button type="submit">회원가입</button>
+        <button type="button" onclick="axiosGet()">회원가입</button>
+
+        <div class="result"></div>
     </form>
+
+    <script>
+        //result 박스 선택
+        const resultBox = document.querySelector('.result');
+
+        function axiosGet(){
+        //폼 선택
+        const form = document.forms['register'];
+
+        //폼 요소 확인
+        console.log(form);
+
+        const data = {
+            name: form.userName.value,
+            gender:form.gender.value,
+            birthYear: form.birthYear.value,
+            birthMonth: form.birthMonth.value,
+            birthDay: form.birthDay.value,
+            hobby: form.hobby.value,
+        }
+
+        axios({
+            method: 'get',
+            url: '/axios',
+            params: data,
+        }).then((response)=>{
+            console.log(response);
+            console.log(response.data);
+
+            const data = response.data;
+            //[질문]
+
+            resultBox.textContent= `Get /axios 요청 완료! ${data.name}님의 성별은 ${data.gender}, 생년월일은 ${data.birthYear}년 ${data.birthMonth}월 ${data.birthDay}일, 취미는 ${data.hobby}입니다.`;
+        }).catch((error)=>{
+            console.log('Error', error)
+            resultBox.textContent=`에러 발생`;
+        });
+    }
+
+    </script>
     
 </body>
 </html>

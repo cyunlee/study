@@ -8,6 +8,10 @@ app.set('views', './views');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.get('/axios', (req, res)=>{
+    res.send(req.query);
+})
+
 app.get('/practice1', (req, res) => {
     res.render('practice1');
 })
