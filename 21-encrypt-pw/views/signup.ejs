@@ -12,8 +12,8 @@
     <form name="register">
       <label for="name">이름</label>
       <input type="text" id="name" name="name" /><br />
-      <label for="id">ID</label>
-      <input type="text" id="id" name="id" /><br />
+      <label for="userid">ID</label>
+      <input type="text" id="userid" name="userid" /><br />
       <label for="pw">PW</label>
       <input type="password" id="pw" name="pw" /><br />
       <button type="button" onclick="signUp()">회원가입</button>
@@ -26,32 +26,25 @@
 
       async function signUp() {
         const form = document.forms["register"];
-        //폼 요소 확인
-        console.log(form);
-        console.log(form.name);
-        console.log(form.id);
-        console.log(form.pw);
-
-        //폼 요소 value 값
-        const data = {
-          name: form.name.value,
-          id: form.id.value,
-          pw: form.pw.value,
-        };
-
-        console.log("data > ", data);
 
         try {
           const response = await axios({
-            method: "post",
+            method: "POST",
             url: "/register",
-            data: data,
+            data: {
+              name: form.name.value,
+              userid: form.userid.value,
+              pw: form.pw.value,
+            },
           });
+          
           console.log(response);
+          
+          if(response.data.result){
+            alert('회원가입을 축하드립니다');
+            document.location.href='/';
+          }
 
-          const { name, id, pw } = response.data;
-          console.log(name, id, pw);
-        //   resultBox.textContent = `${name}, ${id}, ${pw}`;
         } catch (error) {
           console.log(error);
           resultBox.textContent = "에러가 발생했습니다 다시 확인해주세요";

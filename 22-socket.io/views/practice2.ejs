@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>채팅창</title>
+    <style>
+        .chatRoom{
+            width: 300px;
+            height: 600px;
+            background-color: pink;
+            padding: 10px;
+            display: flex;
+        }
+        .others{
+            width: fit-content;
+            height: fit-content;
+            background-color: white;
+            padding: 5px;
+            float: left;
+        }
+        .me{
+            width: fit-content;
+            height: fit-content;
+            background-color: yellow;
+            padding: 5px;
+            float: right;
+        }
+        .left{
+            width: 50%;
+            margin-top: 60px;
+        }
+        .right{
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="chatRoom">
+        <div class="left">
+            <p class="others">응 안녕?</p>
+        </div>
+        <div class="right">
+            <p class="me">안녕?</p>
+        </div>
+    </div><br>
+    <input type="text">
+    <button>전송</button>
+</body>
+</html>

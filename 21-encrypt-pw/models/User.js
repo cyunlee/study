@@ -11,7 +11,7 @@ const User = (Sequelize, DataTypes) => {
             //id int AI PK
             id: {
                 type: DataTypes.INTEGER,
-                allowNull: false,
+                allowNull: true,
                 primaryKey: true,
                 autoIncerment: true
             },

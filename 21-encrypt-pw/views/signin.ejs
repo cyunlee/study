@@ -10,8 +10,8 @@
   <body>
     <h1>로그인</h1>
     <form name="login">
-      <label for="id">ID</label>
-      <input type="text" id="id" name="id" /><br />
+      <label for="userid">ID</label>
+      <input type="text" id="userid" name="userid" /><br />
       <label for="pw">PW</label>
       <input type="password" id="pw" name="pw" /><br />
       <button type="button" onclick="logIn()">로그인</button>
@@ -24,30 +24,23 @@
 
       async function logIn() {
         const form = document.forms["login"];
-        //폼 요소 확인
-        console.log(form);
-        console.log(form.id);
-        console.log(form.pw);
-
-        //폼 요소 value 값
-        const data = {
-          id: form.id.value,
-          pw: form.pw.value,
-        };
-
-        console.log("data > ", data);
+       
 
         try {
           const response = await axios({
-            method: "post",
+            method: "POST",
             url: "/login",
-            data: data,
+            data: {
+              userid: form.userid.value,
+              pw: form.pw.value,
+            },
           });
-          console.log(response);
 
-          const { id, pw } = response.data;
+          if(response.data.result){
+            alert('로그인 성공!');
+          }
 
-        //   resultBox.textContent = `${id}, ${pw}`;
+          //   resultBox.textContent = `${id}, ${pw}`;
         } catch (error) {
           console.log(error);
           resultBox.textContent = "에러가 발생했습니다 다시 확인해주세요";

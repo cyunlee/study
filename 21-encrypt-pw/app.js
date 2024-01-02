@@ -9,12 +9,8 @@ app.set('views', './views');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const indexRouter = require('./routes/user');
-app.use('/', indexRouter);
-
-app.get('*', (req,res)=>{
-    res.render('404 error');
-})
+const userRouter = require('./routes/user');
+app.use('/', userRouter);
 
 db.sequelize.sync({force: false}).then(()=>{
 
