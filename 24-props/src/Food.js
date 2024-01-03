@@ -1,4 +1,5 @@
 
+import React from 'react';
 import PropTypes from 'prop-types';
 //리액트에서 제공하는 기능
 //prop-types 라이브러리를 PropTypes 이름으로 임포트

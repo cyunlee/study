@@ -17,7 +17,6 @@ class Class extends Component {
 
 Class.defaultProps = {
     text: '이건 기본 text props입니다.',
-    valid: console.log('콘솔 띄우기 성공!'),
   };
 
 Class.propTypes = {

@@ -6,7 +6,7 @@ function App() {
     <div className="App">
      
     
-    <Class />
+    <Class text='App.js에서 넘겨준 컴포넌트입니다'  />
 
   </div>
   );
