@@ -1,18 +1,13 @@
-
 import './App.css';
-import ColorEx from './components/ex/ColorEx';
-import HandlerEx from './components/ex/HandlerEx';
-import ShowAndVanish from './components/ex/Show';
+import AllEx from './components/ex/All';
+
+
 
 
 function App() {
   return (
     <div className="App">
-      <HandlerEx />
-      <hr />
-      <ColorEx />
-      <hr />
-      <ShowAndVanish />
+      <AllEx />
     </div>
   );
 }
